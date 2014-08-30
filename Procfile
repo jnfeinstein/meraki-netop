@@ -1,1 +1,1 @@
-web: boilerplate
+web: goboilerplate

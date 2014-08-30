@@ -1,9 +1,9 @@
 package main
 
 import (
-	"boilerplate/config"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
+	"goboilerplate/config"
 	"runtime"
 )
 

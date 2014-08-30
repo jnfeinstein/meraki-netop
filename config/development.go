@@ -7,7 +7,7 @@ import (
 	"github.com/go-martini/martini"
 )
 
-const DEBUG = true
+const HEROKU = false
 
 func Initialize(m *martini.ClassicMartini) {
 	fmt.Println("Running in debug environment")

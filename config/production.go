@@ -9,12 +9,15 @@ import (
 	"os"
 )
 
-const DEBUG = false
-const APPNAME = "BOILERPLATE"
+const HEROKU = true
+const APPNAME = "GOBOILERPLATE"
 
 func Initialize(m *martini.ClassicMartini) {
 	fmt.Println("Running in production environment")
 
-	gorelic.InitNewrelicAgent(os.Getenv("NEW_RELIC_LICENSE_KEY"), APPNAME, true)
-	m.Use(gorelic.Handler)
+	NEW_RELIC_LICENSE_KEY := os.Getenv("NEW_RELIC_LICENSE_KEY")
+	if len(NEW_RELIC_LICENSE_KEY) > 0 {
+		gorelic.InitNewrelicAgent(NEW_RELIC_LICENSE_KEY, APPNAME, true)
+		m.Use(gorelic.Handler)
+	}
 }

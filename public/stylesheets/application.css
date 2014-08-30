@@ -1,41 +1,4 @@
-body { margin-left: 10px;}
-div#main-container{
-  min-height: 220px;
-  max-width: 500px;
-  border: 1px solid gray;
+#date-time {
+  background-color: lightblue;
+  max-width: 300px;
 }
-div#controls { margin-top: 10px;}
-div#controls.sender.recording button#record { display: none; }
-div#controls.sender:not(.recording) button#pause { display: none; }
-div#controls.receiver.playing button#play { display: none; }
-div#controls.receiver:not(.playing) button#pause { display: none; }
-
-a#friend-url { display: inline-block; }
-div#room-name-container {
-  margin-top: 20px;
-}
-div#room-list-container {
-  display: inline-block;
-  margin-top: 20px;
-}
-div#room-list { text-align: center; }
-div#room-list a { display: block; }
-
-div#chat-container {
-  margin-top: 20px;
-}
-
-div#chat-window {
-  border: 1px solid gray;
-  width: 40em;
-  height: 20em;
-  overflow-y: scroll;
-  overflow-x: scroll;
-}
-
-div#chat-controls {
-  margin-top: 10px;
-  width: 40em;
-}
-
-div.chat { margin-left: 8px; }
