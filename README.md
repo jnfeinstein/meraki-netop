@@ -16,6 +16,8 @@ Use this package to get a Go-based webapp off the ground in minutes.
   * This last part is important for Go package discovery
 
 ### In development
+1. `go get`
+  * Only need to do this once
 1. `npm install`
   * Only need to do this once
 1. `bower install`
@@ -23,6 +25,8 @@ Use this package to get a Go-based webapp off the ground in minutes.
 1. `go run server.go`
 
 ### In production
+1. `go get github.com/tools/godep`
+  * Only need to do this once
 1. `heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git`
   * Only need to do this once
 1. `godep save` and commit changes
