@@ -12,21 +12,18 @@ module.exports = function(grunt) {
         }
       }
     },
-    sass: {
+    compass: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: 'private/stylesheets',
-          src: ['*.scss'],
-          dest: 'public/stylesheets',
-          ext: '.css'
-        }]
+        options: {
+          sassDir: 'private/stylesheets',
+          cssDir: 'public/stylesheets'
+        }
       }
     },
     watch: {
       stylesheets: {
         files: ['private/stylesheets/**/*.scss'],
-        tasks: ['sass']
+        tasks: ['compass']
       },
       javascripts: {
         files: ['private/javascripts/**/*.js'],
@@ -42,10 +39,11 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', ['uglify', 'sass']);
+  grunt.registerTask('default', ['clean', 'uglify', 'compass']);
+  grunt.registerTask('heroku', ['clean', 'uglify', 'compass']);
 
 };

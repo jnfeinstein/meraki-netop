@@ -14,10 +14,10 @@ Use this package to get a Go-based webapp off the ground in minutes.
 ### Common
 1. Change instances of "goboilerplate" or "GOBOILERPLATE" to the name of your app, including the folder name
   * This last part is important for Go package discovery
-1. `gem install sass` to install the sass stylesheet processor
-  * You may (probably) need to `sudo` this command
 
 ### In development
+1. `gem install compass` to install the compass stylesheet processor
+  * You may (probably) need to `sudo` this command
 1. `go get`
   * Only need to do this once
 1. `npm install`

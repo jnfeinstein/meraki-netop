@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "bower": "*"
+    "bower": "*",
+    "grunt": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-uglify": "*"
   },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-sass": "*",
-    "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*"
   },
   "scripts": {
