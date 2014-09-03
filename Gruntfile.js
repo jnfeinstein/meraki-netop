@@ -6,11 +6,14 @@ module.exports = function(grunt) {
       options: {
         sourceMap: true
       },
-      dist: {
-        files: {
-          'public/javascripts/build.min.js': 'private/javascripts/**/*.js'
-        }
-      }
+      files: {
+        expand: true,     // Enable dynamic expansion.
+        cwd: 'private/javascripts',      // Src matches are relative to this path.
+        src: ['**/*.js'], // Actual pattern(s) to match.
+        dest: 'public/javascripts',   // Destination path prefix.
+        ext: '.min.js',   // Dest filepaths will have this extension.
+        extDot: 'first'   // Extensions in filenames begin after the first dot
+      },
     },
     compass: {
       dist: {
@@ -33,8 +36,7 @@ module.exports = function(grunt) {
     clean: [
       'public/javascripts/**/*.min.js',
       'public/javascripts/**/*.map',
-      'public/stylesheets/**/*.css',
-      'public/stylesheets/**/*.css.map',
+      'public/stylesheets/**/*.css'
     ]
   });
 
