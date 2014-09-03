@@ -14,10 +14,6 @@ func main() {
 
 	config.Initialize(m)
 
-	m.Use(render.Renderer(render.Options{
-		Layout: "application",
-	}))
-
 	m.Get("/", func(r render.Render) {
 		r.HTML(200, "index", nil)
 	})

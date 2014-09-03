@@ -14,6 +14,8 @@ Use this package to get a Go-based webapp off the ground in minutes.
 ### Common
 1. Change instances of "goboilerplate" or "GOBOILERPLATE" to the name of your app, including the folder name
   * This last part is important for Go package discovery
+1. `gem install sass` to install the sass stylesheet processor
+  * You may (probably) need to `sudo` this command
 
 ### In development
 1. `go get`
@@ -38,7 +40,7 @@ Use this package to get a Go-based webapp off the ground in minutes.
 
 ### config
 
-By default this folder contains development.go and production.go, which both define the package ```config```.  Only one of them will be imported by server.go depending on whether the build tag ```heroku``` is defined (production.go) or not (development.go).  You can define environment specific code in these files.  New Relic is initialized in production.go, which is only used in the Heroku environment.
+By default this folder contains devel.go and heroku.go, which both define the package ```config```.  Only one of them will be imported by server.go depending on whether the build tag ```heroku``` is defined (production.go) or not (development.go).  You can define environment specific code in these files.  New Relic is initialized in heroku.go, which is only used in the Heroku environment.
 
 ### Godeps
 
