@@ -7,9 +7,8 @@ import (
 	"github.com/go-martini/martini"
 )
 
-func IsHeroku() bool {
-	return false
-}
+const PostgresArgs = "dbname=postgres sslmode=disable"
+const Heroku = false
 
 func Initialize(m *martini.ClassicMartini) {
 	fmt.Println("Running in debug environment")

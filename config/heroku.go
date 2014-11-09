@@ -9,18 +9,17 @@ import (
 	"os"
 )
 
-const APPNAME = "GOBOILERPLATE"
+const AppName = "GOBOILERPLATE"
+const Heroku = true
 
-func IsHeroku() bool {
-	return true
-}
+var PostgresArgs = os.Getenv("DATABASE_URL")
 
 func Initialize(m *martini.ClassicMartini) {
 	fmt.Println("Running in production environment")
 
-	NEW_RELIC_LICENSE_KEY := os.Getenv("NEW_RELIC_LICENSE_KEY")
-	if len(NEW_RELIC_LICENSE_KEY) > 0 {
-		gorelic.InitNewrelicAgent(NEW_RELIC_LICENSE_KEY, APPNAME, true)
+	newRelicLicenseKey := os.Getenv("NEW_RELIC_LICENSE_KEY")
+	if len(newRelicLicenseKey) > 0 {
+		gorelic.InitNewrelicAgent(newRelicLicenseKey, AppName, true)
 		m.Use(gorelic.Handler)
 	}
 }
