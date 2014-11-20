@@ -11,8 +11,12 @@ func main() {
 
 	m.Use(render.Renderer())
 
-	m.Get("/", func(req *http.Request, r render.Render) {
-		r.HTML(200, "app", req.URL.Query())
+	m.Get("/login", func(req *http.Request, r render.Render) {
+		r.HTML(200, "login", req.URL.Query())
+	})
+
+	m.Get("/clickthrough", func(req *http.Request, r render.Render) {
+		r.HTML(200, "clickthrough", req.URL.Query())
 	})
 
 	m.Run()
