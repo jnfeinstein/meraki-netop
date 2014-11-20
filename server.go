@@ -11,6 +11,10 @@ func main() {
 
 	m.Use(render.Renderer())
 
+	m.Get("/", func(r render.Render) {
+		r.HTML(200, "index", nil)
+	})
+
 	m.Get("/login", func(req *http.Request, r render.Render) {
 		r.HTML(200, "login", req.URL.Query())
 	})
